@@ -7,7 +7,6 @@ $cSession = curl_init();
 //step2
 curl_setopt($cSession,CURLOPT_URL,$url);
 curl_setopt($cSession,CURLOPT_RETURNTRANSFER,true);
-curl_setopt($cSession,CURLOPT_HEADER, false); 
 //step3
 $result=curl_exec($cSession);
 //step4
