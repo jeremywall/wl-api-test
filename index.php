@@ -17,8 +17,8 @@ $data = json_decode(file_get_contents($url));
   <body>
     <div class="container">
       <div class="row">
-        <div class="col"><?php echo($data["temp_f"]); ?> &deg; F</div>
-        <div class="col"><?php echo($data["temp_extra_1"]); ?> &deg; F</div>
+        <div class="col"><?php echo($data->temp_f); ?> &deg; F</div>
+        <div class="col"><?php echo($data->temp_extra_1); ?> &deg; F</div>
       </div>
     </div>
   </body>
