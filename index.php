@@ -11,6 +11,7 @@ $data = json_decode(file_get_contents($url));
     <style>
       * {
         font-family: 'Lexend Deca', sans-serif;
+        font-size: 64px;
       }
     </style>
   </head>
@@ -18,7 +19,13 @@ $data = json_decode(file_get_contents($url));
     <div class="container">
       <div class="row">
         <div class="col"><?php echo($data->temp_f); ?> &deg; F</div>
+<?php
+        if(property_exists($data, "temp_extra_1")) {
+?>
         <div class="col"><?php echo($data->temp_extra_1); ?> &deg; F</div>
+<?php
+        }
+?>
       </div>
     </div>
   </body>
