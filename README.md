@@ -14,5 +14,6 @@
   - APITOKEN: THE V1 API TOKEN
 - Back on the Deploy tab you can click the Deploy Branch button at the bottom of the page to manually deploy the code from GitHub to Heroku.
 - It will take a few moments to deploy and relaunch the web server but you can then click the "Open app" button at the top of the screen to view the PHP page in a new browser window that will open.
+- You can optional enable automatic deployments on this page as well so every change to the GitHub repository triggers an auto deploy to Heroku.
 - From the new browser window that opened you can get the URL and use that in an iframe.
 - Lastly, feel free to change the HTML, CSS, etc in the GitHub repository you forked so you can customize the appearance of the page.
