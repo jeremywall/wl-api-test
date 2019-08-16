@@ -2,6 +2,8 @@
 
 $url = getenv("URL")."/v1/NoaaExt.json?user=".getenv("DID")."&pass=".getenv("PASSWORD")."&apiToken=".getenv("APITOKEN");
 
+error_log($url);
+
 //step1
 $cSession = curl_init(); 
 //step2
