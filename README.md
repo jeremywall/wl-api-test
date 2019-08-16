@@ -8,10 +8,10 @@
 1. Go to the Settings tab on Heroku.
 1. Click Reveal Config Vars buttons.
 1. Add the following configuration variables:
-  1. URL: https://api.weatherlink.com
-  1. DID: THE DID OF THE WEATHER STATION
-  1. PASSWORD: THE WEATHERLINK ACCOUNT PASSWORD
-  1. APITOKEN: THE V1 API TOKEN
+  - URL: https://api.weatherlink.com
+  - DID: THE DID OF THE WEATHER STATION
+  - PASSWORD: THE WEATHERLINK ACCOUNT PASSWORD
+  - APITOKEN: THE V1 API TOKEN
 1. Back on the Deploy tab you can click the Deploy Branch button at the bottom of the page to manually deploy the code from GitHub to Heroku.
 1. It will take a few moments to deploy and relaunch the web server but you can then click the "Open app" button at the top of the screen to view the PHP page in a new browser window that will open.
 1. From the new browser window that opened you can get the URL and use that in an iframe.
