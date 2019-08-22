@@ -3,6 +3,17 @@
 $url = getenv("URL")."/v1/NoaaExt.json?user=".getenv("DID")."&pass=".getenv("PASSWORD")."&apiToken=".getenv("APITOKEN");
 
 $data = json_decode(file_get_contents($url));
+
+$temp = $data->temp_f;
+$tempExtra1 = null;
+$stationName = null;
+if (property_exists($data, "davis_current_observation")) {
+  $currentObservation = $data->davis_current_observation;
+  $stationName = $currentObservation->station_name;
+  if (property_exists($currentObservation, "temp_extra_1")) {
+    $tempExtra1 = $currentObservation->temp_extra_1;
+  }
+}
 ?>
 <html>
   <head>
@@ -18,24 +29,15 @@ $data = json_decode(file_get_contents($url));
   <body>
     <div class="container">
       <div class="row">
-        <div class="col">Air Temperature</div>
-<?php
-        if(property_exists($data, "temp_extra_1")) {
-?>
-        <div class="col">Water Temperature</div>
-<?php
-        }
-?>
+        <div class="col"><?php echo($stationName); ?></div>
       </div>
       <div class="row">
-        <div class="col"><?php echo($data->temp_f); ?> &deg; F</div>
-<?php
-        if(property_exists($data, "temp_extra_1")) {
-?>
-        <div class="col"><?php echo($data->temp_extra_1); ?> &deg; F</div>
-<?php
-        }
-?>
+        <div class="col">Air Temperature</div>
+        <div class="col">Extra Temperature 1</div>
+      </div>
+      <div class="row">
+        <div class="col"><?php echo($temp); ?> &deg; F</div>
+        <div class="col"><?php echo($tempExtra1); ?> &deg; F</div>
       </div>
     </div>
   </body>
